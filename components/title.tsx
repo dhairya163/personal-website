@@ -13,7 +13,6 @@ const Title = () => {
 
     const data = name ? blogConfig[name] : blogConfig.home
 
-    // 如果是博客页面并带有tag参数
     const searchParams = useSearchParams()
     const tag = searchParams.get('tag')
     if (name === 'blog' || tag) {

@@ -1,30 +1,29 @@
-import {Input} from "@/components/ui/input";
-import {Button} from "@/components/ui/button";
-import {pluginConfig} from "@/blog.config";
+import { Button } from "@/components/ui/button";
+import { pluginConfig } from "@/blog.config";
 
 const ButtonDown = () => {
-    const {buttondown: {username}} = pluginConfig.newsletter
+    const { buttondown: { username } } = pluginConfig.newsletter;
 
     return (
         <form
-            action={`https://buttondown.email/api/emails/embed-subscribe/${username}`}
+            action={`https://buttondown.com/api/emails/embed-subscribe/${username}`}
             method="post"
-            target="popupwindow"
-            onSubmit={() => {
-                window.open(`https://buttondown.com/${username}`, 'popupwindow')
-            }}
+            target="_blank"
+            className="flex gap-2"
         >
-            <div className="flex w-full max-w-sm items-center flex-col md:flex-row">
-                <Input
-                    className={"min-w-72 mb-4 mr-0 md:mb-0 md:mr-4"}
-                    type="email"
-                    placeholder="Subscribe via email"
-                    name=" email"
-                />
-                <Button className={" w-full md:w-fit"} type="submit" value=" Subscribe">Subscribe</Button>
-            </div>
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                className="px-3 py-2 border rounded-md"
+                required
+            />
+            <input type="hidden" value="1" name="embed" />
+            <Button type="submit" className="px-4 py-2 bg-black text-white hover:bg-gray-800">
+                Subscribe
+            </Button>
         </form>
-    )
+    );
 }
 
-export default ButtonDown
+export default ButtonDown;

@@ -6,7 +6,7 @@ import Intro from "./components/intro.mdx" // introduction or about me
 // The following is the configuration of the blog, including the author, title, description, and other settings.
 const blogConfig: any = {
     // author name
-    author: "yuanli",
+    author: "Dhairya Aggarwal",
 
     // Logo
     logo: {
@@ -32,7 +32,7 @@ const blogConfig: any = {
     theme: "light",
 
     // your blog repo || your github repo || null
-    githubRepo: "https://github.com/imyuanli/next-blog",
+    githubRepo: "https://github.com/dhairya163/personal-website",
 
     // routes
     routes: [
@@ -40,10 +40,10 @@ const blogConfig: any = {
             name: 'Blog',
             value: '/blog'
         },
-        {
-            name: 'Tags',
-            value: '/tags'
-        },
+        // {
+        //     name: 'Tags',
+        //     value: '/tags'
+        // },
         {
             name: 'Projects',
             value: '/project'
@@ -52,10 +52,9 @@ const blogConfig: any = {
 
     // socials links
     socials: {
-        email: "286547316@qq.com",
-        github: "https://github.com/imyuanli",
-        twitter: "https://twitter.com",
-        linkedin: "",
+        email: "dhairya.aggarwal@gmail.com",
+        github: "https://github.com/dhairya163",
+        linkedin: "https://www.linkedin.com/in/dhairya-aggarwal/",
         facebook: "",
         instagram: "",
         youtube: "",
@@ -63,21 +62,19 @@ const blogConfig: any = {
 
     // home page config
     home: {
-        title: "Welcome to NextBlog",
-        description: "A minimalist blog created with Next.js ,Shadcn-ui and Tailwind.css",
-
-        // introduction or about me
-        // Why use components instead of configurations? Because this makes the homepage more customizable instead of a hard-coded template.
+        title: "Dhairya Aggarwal",
+        description: "Turning coffee into code and dreams into AI reality. Join me on this wild tech ride!",
+        hook: "From Institute Gold Medalist to AI trailblazer at Writesonic - join me on this exciting journey!",
         intro: Intro, // file path of the introduction
     },
 
     // blog page config
     blog: {
-        title: 'Changelog & Blogs',
-        description: 'Regarding the update logs of NextBlog, blogs, and others, etc.',
+        title: 'AI & Tech Insights',
+        description: 'Exploring AI, LLMs, and cutting-edge software engineering.',
 
-        // pinnedSort is used to sort the pinned articles, the default is "desc" (descending), you can also set it to "asc" (ascending)
-        pinnedSort: "desc", // "asc" | "desc"
+        // pinnedSort is used to sort the pinned articles, the default is "desc" (descending)
+        pinnedSort: "desc",
     },
 
     // tags page config
@@ -133,36 +130,11 @@ const blogConfig: any = {
         // you can add more fields according to your needs ,but you need to modify the code in the project/page.tsx file
         projects: [
             {
-                name: "NextBlog",
-                description: "A minimalist blog created with Next.js ,Shadcn-ui and Tailwind.css",
-                href: "https://next-blog.imyuanli.cn",
-                github: "imyuanli/next-blog",
+                name: "Personal Website",
+                description: "A minimilistic website created with Next.js ,Shadcn-ui and Tailwind.css",
+                href: "https://dhairya.ai",
+                github: "dhairya163/personal-website",
                 status: "active",
-            },
-            {
-                name: "AllDone",
-                description: "One stop project management platform",
-                status: "dev",
-            },
-            {
-                name: "Slash Editor",
-                description: "A simple rich text editor",
-                href: "https://slash.imyuanli.cn",
-                github: "imyuanli/slash-editor",
-            },
-            {
-                name: "RMX",
-                description: "Readme is an online editor that can help developers quickly create README.md for their projects, while also meeting some templates for Github personal pages",
-                href: "https://readme.imyuanli.cn/",
-                github: "imyuanli/readme",
-                status: "filed",
-            },
-            {
-                name: "Resume",
-                description: "A simple resume template",
-                href: "https://resume.imyuanli.cn/",
-                github: "imyuanli/resume",
-                status: "offline",
             },
         ],
     },
@@ -171,7 +143,7 @@ const blogConfig: any = {
     footer: {
         isShow: true,
         // whether to display the "Powered by NextBlog" in the footer，you can set it to false，but I hope you can keep it，thank you！
-        isShowPoweredBy: true,
+        isShowPoweredBy: false,
     },
 }
 
@@ -183,30 +155,30 @@ const pluginConfig = {
         engine: "giscus", // "" | giscus | utterances
 
         // giscus doc: https://giscus.app
-        giscus: {
-            repo: "imyuanli/next-blog",
-            repoId: "R_kgDOKTZ_kQ",
-            category: "Announcements",
-            categoryId: "DIC_kwDOKTZ_kc4CfMXK",
-            mapping: "pathname",
-            reactionsEnabled: "1",
-            emitMetadata: "0",
-            inputPosition: "top",
-            theme: "light",
-            lang: "en",
-            loading: "lazy",
-        },
+        // giscus: {
+        //     repo: "imyuanli/next-blog",
+        //     repoId: "R_kgDOKTZ_kQ",
+        //     category: "Announcements",
+        //     categoryId: "DIC_kwDOKTZ_kc4CfMXK",
+        //     mapping: "pathname",
+        //     reactionsEnabled: "1",
+        //     emitMetadata: "0",
+        //     inputPosition: "top",
+        //     theme: "light",
+        //     lang: "en",
+        //     loading: "lazy",
+        // },
 
-        // utterances doc: https://utteranc.es
-        utterances: {
-            src: "https://utteranc.es/client.js",
-            repo: "imyuanli/next-blog",
-            "issue-term": "pathname",
-            theme: "github-light",
-            crossorigin: "anonymous",
-            label: "",
-            async: true
-        }
+        // // utterances doc: https://utteranc.es
+        // utterances: {
+        //     src: "https://utteranc.es/client.js",
+        //     repo: "imyuanli/next-blog",
+        //     "issue-term": "pathname",
+        //     theme: "github-light",
+        //     crossorigin: "anonymous",
+        //     label: "",
+        //     async: true
+        // }
     },
 
     // Pagination
@@ -240,7 +212,7 @@ const pluginConfig = {
 
         // buttondown doc: https://buttondown.com
         buttondown: {
-            username: "yuanli", //  your buttondown username
+            username: "dhairya", //  your buttondown username
         },
     },
 }

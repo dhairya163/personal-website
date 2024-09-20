@@ -12,14 +12,13 @@ import {
 import Image from "next/image";
 import {useState} from "react";
 import {Separator} from "@/components/ui/separator";
-import {Github, Menu, Moon, Sun} from "lucide-react";
+import {Github, Menu, Moon, Sun, Home} from "lucide-react";
 import {useTheme} from "next-themes";
 import Search from "@/plugins/search";
 
 const Header = () => {
-    const {routes, logo, githubRepo} = blogConfig
+    const {routes, githubRepo} = blogConfig
 
-    //高亮导航栏
     const pathname = usePathname()
     const active = routes.find((item: any) => item.value == '/' + pathname.split('/')[1])?.name
 
@@ -27,25 +26,16 @@ const Header = () => {
     const [open, setOpen] = useState(false)
 
     return (
-        <div className={'w-full sticky top-0 bg-white/80 backdrop-blur-md shadow-sm z-10 min-h-20'}>
+        <div className={'w-full sticky top-0 bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm z-10 min-h-20'}>
             <header className={'container flex justify-between py-4'}>
                 <div className={'flex justify-center items-center'}>
                     <Link className={'flex justify-center items-center mr-4'} href={'/'}>
-                        {logo?.image &&
-                            <Image
-                                src={logo?.image}
-                                height={28}
-                                width={28}
-                                alt={'logo'}
-                            />
-                        }
-                        {logo?.text && <div className={'ml-1 text-lg font-semibold'}>
-                            {logo?.text}
-                        </div>}
+                        <Home className="w-6 h-6 mr-2" />
+                        <span className="text-lg font-semibold">Home</span>
                     </Link>
                     <div className={'hidden md:block space-x-1'}>
                         {routes.map((route: any) => (
-                            <Link href={route?.value}>
+                            <Link href={route?.value} key={route.name}>
                                 <Button variant={active == route.name ? 'secondary' : 'ghost'} className={'text-base'}>
                                     {route.name}
                                 </Button>

@@ -7,6 +7,7 @@ import {Button} from "@/components/ui/button";
 import {Github} from "lucide-react";
 import {blogConfig} from "@/blog.config";
 
+export const GITHUB_URL = "https://github.com/"
 
 const ProjectContent = () => {
     const {projects, getStatus} = blogConfig.project
@@ -33,7 +34,7 @@ const ProjectContent = () => {
                                 {text}
                             </Badge>}
                             {project.github && <Button className={'ml-2'} variant={'ghost'} size={'icon'}>
-                              <Link href={project.github}>
+                              <Link href={GITHUB_URL + project.github} target="_blank">
                                 <Github size={20}/>
                               </Link>
                             </Button>}

@@ -28,7 +28,6 @@ import {
 const getPost = async (slug: string) => {
     const post: any = getPostsData().find((post) => post.id === slug)
     if (!post) return null
-    // 获取目录数据
     const file = await remark()
         .use(remarkNormalizeHeadings)
         .use(remarkFlexibleToc)
@@ -109,6 +108,9 @@ export default async function Post({params}: any) {
                         <Suspense fallback={<>Loading...</>}>
                             <MDXRemote
                                 source={post.content}
+                                components={{
+                                    Button: Button,
+                                }}
                                 options={{
                                     mdxOptions: {
                                         remarkPlugins: [

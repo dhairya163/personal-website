@@ -9,7 +9,6 @@ export const getPostsData = () => {
     const postsDirectory = path.join(process.cwd(), 'posts')
     const fileNames = fs.readdirSync(postsDirectory)
     const posts: any = fileNames.map((fileName: any) => {
-        // 这里匹配 md 或者 mdx
         const id = fileName.replace(/\.mdx?$/, '')
         const fullPath = path.join(postsDirectory, fileName)
         const fileContents = fs.readFileSync(fullPath, 'utf8')
