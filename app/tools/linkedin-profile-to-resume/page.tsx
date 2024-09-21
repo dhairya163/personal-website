@@ -207,7 +207,7 @@ export default function LinkedInProfileToResume() {
                     transition={{ duration: 0.5 }}
                 />
                 <CardHeader>
-                    <CardTitle className="text-3xl font-bold text-center">LinkedIn Profile to Resume</CardTitle>
+                    <CardTitle className="text-3xl font-bold text-center">Free LinkedIn Profile to Resume Generator</CardTitle>
                     <CardDescription className="text-center">Convert your LinkedIn profile to a resume</CardDescription>
                 </CardHeader>
                 <CardContent>
