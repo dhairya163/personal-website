@@ -9,6 +9,7 @@ import Footer from "@/components/footer";
 import BackToTop from "@/components/back-to-top";
 import Analytics from "@/plugins/analytics";
 import { Toaster } from "@/components/ui/toast"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const ProviderTheme = dynamic(() => import('@/provider/provider-theme'), { ssr: false })
 
@@ -39,6 +40,7 @@ export default function RootLayout({
                     <BackToTop/>
                     <Analytics/>
                     <Toaster />
+                    <SpeedInsights />
                 </ProviderTheme>
             </body>
         </html>
