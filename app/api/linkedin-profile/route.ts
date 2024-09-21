@@ -25,6 +25,8 @@ async function verifyRecaptcha(token: string) {
   return data.tokenProperties?.valid && data.riskAnalysis?.score >= 0.1;
 }
 
+export const maxDuration = 60;
+
 export async function GET(request: NextRequest) {
   const url = request.nextUrl.searchParams.get('url');
   const recaptchaToken = request.nextUrl.searchParams.get('recaptchaToken');
