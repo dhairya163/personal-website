@@ -15,7 +15,7 @@ const ButtonDown = () => {
                 type="email"
                 name="email"
                 placeholder="Enter your email"
-                className="px-3 py-2 border rounded-md"
+                className="w-72 px-3 py-1 border rounded-md"
                 required
             />
             <input type="hidden" value="1" name="embed" />

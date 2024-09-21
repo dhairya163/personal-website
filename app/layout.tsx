@@ -8,6 +8,7 @@ import Title from "@/components/title";
 import Footer from "@/components/footer";
 import BackToTop from "@/components/back-to-top";
 import Analytics from "@/plugins/analytics";
+import { Toaster } from "@/components/ui/toast"
 
 const ProviderTheme = dynamic(() => import('@/provider/provider-theme'), { ssr: false })
 
@@ -37,6 +38,7 @@ export default function RootLayout({
                     <Footer/>
                     <BackToTop/>
                     <Analytics/>
+                    <Toaster />
                 </ProviderTheme>
             </body>
         </html>

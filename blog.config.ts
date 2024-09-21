@@ -40,13 +40,13 @@ const blogConfig: any = {
             name: 'Blog',
             value: '/blog'
         },
-        // {
-        //     name: 'Tags',
-        //     value: '/tags'
-        // },
         {
             name: 'Projects',
             value: '/project'
+        },
+        {
+            name: 'Tools',
+            value: '/tools'
         },
     ],
 
@@ -75,6 +75,11 @@ const blogConfig: any = {
 
         // pinnedSort is used to sort the pinned articles, the default is "desc" (descending)
         pinnedSort: "desc",
+    },
+
+    tools: {
+        title: 'AI Tools',
+        description: 'Some small tools made by oneself',
     },
 
     // tags page config
