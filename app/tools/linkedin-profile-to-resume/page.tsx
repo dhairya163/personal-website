@@ -281,8 +281,8 @@ export default function LinkedInProfileToResume() {
                                 className="mt-6 space-y-4"
                             >
                                 <Progress value={progress} className="w-full" />
-                                <div className="bg-gray-100 p-4 rounded-md">
-                                    <h3 className="font-semibold mb-2">Progress Updates:</h3>
+                                <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md">
+                                    <h3 className="font-semibold mb-2 dark:text-gray-200">Progress Updates:</h3>
                                     <ul className="space-y-2">
                                         {updates.map((update, index) => (
                                             <motion.li
@@ -290,7 +290,7 @@ export default function LinkedInProfileToResume() {
                                                 initial={{ opacity: 0, x: -20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                                                className="flex items-center"
+                                                className="flex items-center dark:text-gray-300"
                                             >
                                                 {index === updates.length - 1 ? (
                                                     <Loader2 className="h-4 w-4 mr-2 animate-spin text-blue-500" />
@@ -311,9 +311,9 @@ export default function LinkedInProfileToResume() {
                                 transition={{ duration: 0.5 }}
                                 className="mt-6"
                             >
-                                <div className="bg-gray-100 rounded-md overflow-hidden">
-                                    <div className="sticky top-0 bg-gray-200 py-0.5 px-2 flex justify-between items-center">
-                                        <h4 className="font-semibold !mt-2 pl-3">LaTeX Code for Your Resume:</h4>
+                                <div className="bg-gray-100 dark:bg-gray-800 rounded-md overflow-hidden">
+                                    <div className="sticky top-0 bg-gray-200 dark:bg-gray-700 py-0.5 px-2 flex justify-between items-center">
+                                        <h4 className="font-semibold !mt-2 pl-3 dark:text-gray-200">LaTeX Code for Your Resume:</h4>
                                         <Button
                                             variant="ghost"
                                             size="sm"
@@ -324,7 +324,7 @@ export default function LinkedInProfileToResume() {
                                         </Button>
                                     </div>
                                     <div className="p-4 max-h-60 overflow-auto">
-                                        <pre className="text-sm !mt-0">
+                                        <pre className="text-sm !mt-0 dark:text-gray-300">
                                             {(profileData as { resume_latex: string }).resume_latex}
                                         </pre>
                                     </div>
