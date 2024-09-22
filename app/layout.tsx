@@ -16,8 +16,8 @@ const ProviderTheme = dynamic(() => import('@/provider/provider-theme'), { ssr: 
 const inter = Inter({subsets: ["latin"]});
 
 export const metadata: Metadata = {
-    title: blogConfig.title,
-    description: blogConfig.description,
+    title: "AI Resume Generator",
+    description: "Generate professional resumes from LinkedIn profiles using AI",
 };
 
 export default function RootLayout({

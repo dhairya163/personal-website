@@ -10,6 +10,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useToast } from "@/components/ui/toast"
 import { Progress } from "@/components/ui/progress"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import Script from 'next/script'
+import { getLinkedInToResumeMetadata } from '@/lib/utils'
+import type { Metadata } from "next";
 
 declare global {
   interface Window {
@@ -30,6 +33,8 @@ export default function LinkedInProfileToResume() {
     const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
     const [viewLoading, setViewLoading] = useState(false);
     const [downloadLoading, setDownloadLoading] = useState(false);
+
+    const metadata = getLinkedInToResumeMetadata()
 
     useEffect(() => {
         // Load reCAPTCHA script
@@ -199,6 +204,21 @@ export default function LinkedInProfileToResume() {
 
     return (
         <PageContainer>
+            <Script id="linkedin-to-resume-schema" type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "WebApplication",
+                    "name": metadata.title,
+                    "description": metadata.description,
+                    "url": metadata.openGraph?.url,
+                    "applicationCategory": "BusinessApplication",
+                    "operatingSystem": "All",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0"
+                    }
+                })}
+            </Script>
             <Card className="w-full max-w-4xl mx-auto relative overflow-hidden">
                 <motion.div
                     className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"

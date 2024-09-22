@@ -23,10 +23,10 @@ const blogConfig: any = {
     },
 
     // website title
-    title: "NextBlog",
+    title: "All about me",
 
     // website description
-    description: "A minimalist blog created with Next.js ,Shadcn-ui and Tailwind.css",
+    description: "A blog about AI, LLMs, and cutting-edge software engineering.",
 
     // light | dark
     theme: "light",
