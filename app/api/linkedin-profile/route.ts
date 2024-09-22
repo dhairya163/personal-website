@@ -60,7 +60,8 @@ export async function GET(request: NextRequest) {
     try {
       await writeToStream('event: update\ndata: {"message": "Fetching LinkedIn profile data..."}\n\n');
 
-      const response = await fetch(`https://linkedin-api8.p.rapidapi.com/get-profile-data-by-url?url=${encodeURIComponent(url)}`, {
+      const cleanUrl = new URL(url).origin + new URL(url).pathname;
+      const response = await fetch(`https://linkedin-api8.p.rapidapi.com/get-profile-data-by-url?url=${encodeURIComponent(cleanUrl)}`, {
         method: 'GET',
         headers: {
           'x-rapidapi-host': process.env.RAPIDAPI_HOST || '',
