@@ -9,6 +9,16 @@ const nextConfig = {
     missingSuspenseWithCSRBailout: false,
   },
   // Optionally, add any other Next.js config below
+  
+  // Serve the sitemap.xml file
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+      },
+    ]
+  },
 }
 
 module.exports = withMDX(nextConfig)

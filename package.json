@@ -22,9 +22,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npm run generate-sitemap",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-sitemap": "node generateSitemap.mjs"
   },
   "dependencies": {
     "@fileforge/client": "^0.1.18",
@@ -49,6 +50,7 @@
     "dayjs": "^1.11.11",
     "framer-motion": "^11.5.6",
     "gitalk": "^1.8.0",
+    "globby": "^14.0.2",
     "gray-matter": "^4.0.3",
     "katex": "^0.16.11",
     "lucide-react": "^0.445.0",
