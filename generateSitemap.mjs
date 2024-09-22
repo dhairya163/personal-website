@@ -22,7 +22,7 @@ async function generateSitemap() {
     '!app/**/layout.jsx',
   ]);
 
-  const baseUrl = 'https://yourdomain.com'; // Replace with your actual domain
+  const baseUrl = 'https://dhairya.ai';
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
