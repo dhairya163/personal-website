@@ -13,6 +13,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import Script from 'next/script'
 import { getLinkedInToResumeMetadata } from '@/lib/utils'
 import type { Metadata } from "next";
+import mixpanel from 'mixpanel-browser';
 
 declare global {
   interface Window {
@@ -54,6 +55,11 @@ export default function LinkedInProfileToResume() {
         setStep(1)
         setProfileData(null)
         setUpdates([])
+
+        // Send Mixpanel event
+        mixpanel.track('resume_generation_clicked', {
+            linkedin_profile_url: url
+        });
 
         try {
             // Execute reCAPTCHA and wait for the token

@@ -10,8 +10,10 @@ import BackToTop from "@/components/back-to-top";
 import Analytics from "@/plugins/analytics";
 import { Toaster } from "@/components/ui/toast"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Suspense } from 'react';
 
 const ProviderTheme = dynamic(() => import('@/provider/provider-theme'), { ssr: false })
+const MixpanelTracker = dynamic(() => import('@/components/mixpanel-tracker'), { ssr: false });
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -41,6 +43,9 @@ export default function RootLayout({
                     <Analytics/>
                     <Toaster />
                     <SpeedInsights />
+                    <Suspense fallback={null}>
+                        <MixpanelTracker pageName="Layout" />
+                    </Suspense>
                 </ProviderTheme>
             </body>
         </html>
