@@ -51,6 +51,17 @@ export default function LinkedInProfileToResume() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
+        
+        // Validate the URL
+        if (!url.includes('linkedin.com/in')) {
+            toast({
+                title: "Invalid URL",
+                description: "Please enter a valid LinkedIn profile URL (e.g., https://www.linkedin.com/in/username)",
+                variant: "destructive",
+            });
+            return;
+        }
+
         setIsLoading(true)
         setStep(1)
         setProfileData(null)
@@ -268,7 +279,7 @@ export default function LinkedInProfileToResume() {
                                     <div className="relative">
                                         <Input
                                             type="url"
-                                            placeholder="Paste your LinkedIn profile URL"
+                                            placeholder="Paste your LinkedIn profile URL (e.g., https://www.linkedin.com/in/username)"
                                             value={url}
                                             onChange={(e) => setUrl(e.target.value)}
                                             className="pl-12 pr-4 py-2 w-full"
