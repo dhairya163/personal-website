@@ -20,6 +20,7 @@ async function generateSitemap() {
     '!app/**/layout.ts',
     '!app/**/layout.js',
     '!app/**/layout.jsx',
+    'posts/**/*.mdx',
   ]);
 
   const baseUrl = 'https://dhairya.ai';
@@ -28,11 +29,16 @@ async function generateSitemap() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${pages
     .map((page) => {
-      const route = page
-        .replace('app', '')
-        .replace(/\.(tsx|ts|js|jsx)$/, '')
-        .replace(/\/index$/, '')
-        .replace(/\[(.+)\]/, ':$1');
+      let route;
+      if (page.startsWith('posts/')) {
+        route = `/blog/${path.basename(page, '.mdx')}`;
+      } else {
+        route = page
+          .replace('app', '')
+          .replace(/\.(tsx|ts|js|jsx)$/, '')
+          .replace(/\/index$/, '')
+          .replace(/\[(.+)\]/, ':$1');
+      }
 
       return `
   <url>
