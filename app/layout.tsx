@@ -20,6 +20,9 @@ const inter = Inter({subsets: ["latin"]});
 export const metadata: Metadata = {
     title: "AI Resume Generator",
     description: "Generate professional resumes from LinkedIn profiles using AI",
+    icons: {
+        icon: '/favicon.ico', // Add this line
+    },
 };
 
 export default function RootLayout({
@@ -29,6 +32,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <link rel="icon" href="/favicon.ico" sizes="any" />
+            </head>
             <body className={'relative min-h-screen font-mono flex flex-col justify-between'}>
                 <ProviderTheme>
                     <div className={'flex-1'}>
