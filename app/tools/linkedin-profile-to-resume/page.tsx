@@ -465,6 +465,43 @@ export default function LinkedInProfileToResume() {
                     <iframe src={pdfUrl} className="w-full h-full" />
                 </DialogContent>
             </Dialog>
+            <section className="!mt-24">
+                <h2 className="text-2xl font-bold text-center mb-4">How My Tool Converts Your LinkedIn Profile to a Resume</h2>
+                <p className="text-center mb-6">
+                    I created this free LinkedIn Profile to Resume Generator to help you effortlessly convert your LinkedIn profile into a professional resume. 
+                    Simply paste your LinkedIn profile URL, and my tool will handle the rest. No signup required, and it's always free to use.
+                </p>
+                <div className="space-y-4">
+                    <h3 className="text-xl font-semibold">Step-by-Step Process:</h3>
+                    <ol className="list-decimal list-inside space-y-2">
+                        <li>Paste your LinkedIn profile URL into the input field.</li>
+                        <li>Click the "Generate Resume" button.</li>
+                        <li>My tool will fetch your LinkedIn profile data and convert it into a resume format.</li>
+                        <li>Once the resume is generated, you can view or download it as a PDF.</li>
+                    </ol>
+                </div>
+            </section>
+            <section className="mt-12">
+                <h2 className="text-2xl font-bold text-center mb-4">Frequently Asked Questions</h2>
+                <div className="space-y-4">
+                    <div>
+                        <h3 className="text-xl font-semibold">Is this tool really free?</h3>
+                        <p>Yes, my LinkedIn Profile to Resume Generator is completely free to use. No signup or payment is required.</p>
+                    </div>
+                    <div>
+                        <h3 className="text-xl font-semibold">Do I need to create an account?</h3>
+                        <p>No, you do not need to create an account to use my tool. Simply paste your LinkedIn profile URL and generate your resume.</p>
+                    </div>
+                    <div>
+                        <h3 className="text-xl font-semibold">Will this tool always be free?</h3>
+                        <p>Yes, I am committed to keeping this tool free for everyone to use.</p>
+                    </div>
+                    <div>
+                        <h3 className="text-xl font-semibold">Is my data safe?</h3>
+                        <p>Yes, I take your privacy seriously. Your LinkedIn profile data is only used to generate your resume and is not stored or shared.</p>
+                    </div>
+                </div>
+            </section>
         </PageContainer>
     )
 }
