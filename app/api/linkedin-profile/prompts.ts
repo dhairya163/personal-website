@@ -217,14 +217,14 @@ use the almost similar latex code as provided in example, with slight modificati
 function getResumeBuilderPrompt(linkedinProfileData: string) {
     return {
         "stream": true,
-        "model": "anthropic/claude-3.5-sonnet",
+        "model": "anthropic/claude-3.5-sonnet-20240620",
         "messages": [
             {
                 "role": "user",
                 "content": USER_PROMPT.replace("{{RESUME_LATEX_EXAMPLE}}", GOOD_RESUME_LATEX_EXAMPLE).replace("{{LINKEDIN_PROFILE_DATA}}", linkedinProfileData)
             }
         ],
-        "temperature": 0.5,
+        "temperature": 0.2,
     };
 }
 
