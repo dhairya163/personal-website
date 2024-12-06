@@ -212,6 +212,8 @@ To complete this task, follow these steps:
 Your final output should be a valid XML containing the personalized message and the complete LaTeX code for the resume. Ensure that all LaTeX commands and formatting are preserved in the XML tag. Make sure the latex is valid and properly formatted
 
 use the almost similar latex code as provided in example, with slight modification as needed according to user's linkedin profile data. make sure the formatting is very good and is should have correct target keywords for getting a good ATS score.
+
+Note: You need to escape the # symbol with a backslash whenever you want it to appear as literal text in your document. Replace all instances of # with \#
 `
 
 function getResumeBuilderPrompt(linkedinProfileData: string) {
