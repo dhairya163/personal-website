@@ -437,6 +437,7 @@ export default function LinkedInProfileToResume() {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.5 }}
+                                    className="flex justify-between items-center"
                                 >
                                     <Button
                                         onClick={resetAndGenerateNew}
@@ -445,6 +446,37 @@ export default function LinkedInProfileToResume() {
                                     >
                                         <Sparkles className="mr-2 h-4 w-4" />
                                         Create for a different profile
+                                    </Button>
+                                    
+                                    <Button
+                                        onClick={() => window.open('https://socialsonic.com/?via=dhairya', '_blank')}
+                                        variant="ghost"
+                                        className="h-full group relative text-sm text-primary transition-all duration-300 hover:shadow-lg hover:scale-105 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 bg-[length:200%] hover:bg-right animate-shimmer cursor-pointer p-3 rounded-lg border border-purple-500/20 hover:border-purple-500/40"
+                                    >
+                                        <div className="flex items-center space-x-2">
+                                            <div className="w-5 h-5">
+                                            <img 
+                                                src="https://www.google.com/s2/favicons?domain=socialsonic.com&sz=48"
+                                                alt="Socialsonic" 
+                                                style={{
+                                                    width: '20px',
+                                                    height: '20px',
+                                                    display: 'block',
+                                                    flexShrink: 0,
+                                                    objectFit: 'contain',
+                                                    marginTop: '0px',
+                                                }}
+                                            />
+                                            </div>
+                                            <div className="flex flex-col">
+                                                <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-bold group-hover:underline">
+                                                    🚀 10x Your LinkedIn Growth
+                                                </span>
+                                                <span className="text-xs text-blue-400/80">
+                                                    Try SocialSonic For Free →
+                                                </span>
+                                            </div>
+                                        </div>
                                     </Button>
                                 </motion.div>
                             </motion.div>

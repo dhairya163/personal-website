@@ -19,6 +19,17 @@ const nextConfig = {
       },
     ]
   },
+
+  // Add images configuration
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.google.com',
+        pathname: '/s2/**',
+      },
+    ],
+  },
 }
 
 module.exports = withMDX(nextConfig)
